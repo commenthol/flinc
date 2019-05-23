@@ -19,7 +19,13 @@
   "bin": {
     "flinc": "./bin/flinc.js"
   },
-  "man": "./man/flinc.1",
+  "man": [
+    "./man/flinc.1"
+  ],
+  "directories": {
+    "man": "man",
+    "test": "test"
+  },
   "scripts": {
     "all": "npm-run-all clean lint test",
     "clean": "rimraf coverage .nyc_output",

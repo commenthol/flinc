@@ -1,0 +1,44 @@
+.\" generated with Ronn-NG/v0.8.0
+.\" http://github.com/apjanke/ronn-ng/tree/0.8.0
+.TH "FLINC" "1" "May 2019" "" ""
+.SH "NAME"
+\fBflinc\fR \- recursively include files
+.SH "SYNOPSIS"
+.nf
+flinc [options] <file>
+.fi
+.SH "OPTIONS"
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display this help and exit\.
+.TP
+\fB\-\-version\fR
+Output version information and exit\.
+.TP
+\fB\-o\fR, \fB\-\-output\fR \fIoutfile\fR
+Specify the filename for the processed output\. Defaults to stdout\.
+.TP
+\fB\-r\fR, \fB\-\-regex\fR
+regular expression to search for include tags\. Defaults to \fB!include(filename)\fR
+.SH "EXAMPLE"
+Process a README\.md file:
+.IP "" 4
+.nf
+flinc \-o README\.md README\.md
+.fi
+.IP "" 0
+.P
+Use a cusom regular expression for tag \fBmyinclude filename\.txt\fR and output to stdout:
+.IP "" 4
+.nf
+flinc \-\-regex "^myinclude\es+(\.*?)\es*$" mytext\.txt
+.fi
+.IP "" 0
+.SH "INSTALLATION"
+.nf
+npm i \-g flinc
+.fi
+.SH "COPYRIGHT"
+Copyright (c) 2019\- commenthol \- MIT License
+.SH "REPORTING BUGS"
+flinc repository \fI\%https://github\.com/commenthol/flinc/issues\fR
